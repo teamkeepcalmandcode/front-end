@@ -21,9 +21,8 @@ $height-box-login-left-desktop: 400px;
   justify-content: center;
   background: $cor-principal;
 
-  background: rgb(250, 252, 252);
-  background: linear-gradient(180deg, rgba(250, 252, 252, 1) 0%, rgba(250, 249, 249, 1) 100%);
-  background-size: contain;
+  background: url('../../assets/images/17751\ cópia.jpg') center center no-repeat;
+  background-size: cover;
 }
 .app-login-box {
   min-height: $height-box-login-mobile;
