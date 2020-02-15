@@ -6,17 +6,25 @@
   position: relative;
   margin-top: 10px;
   .input-field {
-    color: #333333;
+    color: #555;
     font-size: 13px;
     height: 30px;
-    padding: 20px 0px;
+    padding: 20px 20px 20px 35px;
     outline: none;
     border: 0 none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    background: #fff;
+  }
+  .icon-input {
+    position: absolute;
+    top: 13px;
+    left: 8px;
+    font-size: 15px;
+    color: #555;
   }
   .input-field.loginInput {
-    color: #fff;
+    color: #555;
   }
 
   .input-focus {
@@ -50,9 +58,12 @@
 
 .loginBoxInput {
   border-bottom: 2px solid #fff;
+  .input-field {
+    color: #555;
+  }
   .input-field::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #e8e8e8;
+    color: #d2d2d2;
     opacity: 1; /* Firefox */
   }
   .input-focus {

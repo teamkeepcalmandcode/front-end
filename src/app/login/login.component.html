@@ -1,3 +1,4 @@
+<div class="background-abstract"></div>
 <div class="app-login">
   <div class="app-login-box col-12 col-md-4">
     <div class="row height-100">
@@ -8,10 +9,20 @@
       </div>
       <div class="app-login-panel-right col-md-7">
         <div class="input-login">
-          <app-input-field [login]="true" placeholder="email" type="email"></app-input-field>
+          <app-input-field
+            icon="fa-envelope"
+            [login]="true"
+            placeholder="email"
+            type="email"
+          ></app-input-field>
         </div>
         <div class="input-login">
-          <app-input-field [login]="true" placeholder="password" type="password"></app-input-field>
+          <app-input-field
+            icon="fa-lock"
+            [login]="true"
+            placeholder="password"
+            type="password"
+          ></app-input-field>
         </div>
         <div class="form-button">
           <app-button name="Entrar"></app-button>
@@ -20,3 +31,9 @@
     </div>
   </div>
 </div>
+<div
+  class="background-abstract"
+  style="    bottom: -97px;
+    top: auto;
+    transform: rotate(180deg);"
+></div>
