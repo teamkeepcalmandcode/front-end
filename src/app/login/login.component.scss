@@ -76,11 +76,33 @@ $height-box-login-left-desktop: 400px;
 
 @media screen and (min-width: 768px) {
   .app-login {
+    background: #f1ecee;
+    justify-content: center;
   }
+  .app-login-panel-left {
+    background: $cor-secundaria;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    height: 100%;
+  }
+
   .app-login-box {
     box-shadow: -1px -1px 29px -5px rgba(0, 0, 0, 0.43);
+    background: $cor-secundaria;
+
+    display: flex;
   }
   .app-login-panel-right {
-    background: #fff;
+    background: $cor-secundaria;
+    height: 100%;
+  }
+  .app-login-box {
+    height: 600px;
+  }
+  .footer-abstract {
+    display: none;
   }
 }
