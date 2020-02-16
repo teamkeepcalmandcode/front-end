@@ -12,11 +12,11 @@ import { LoginComponent } from "./views/login/login.component";
 import { DashboardUserComponent } from "./views/dashboard/dashboard-user/dashboard-user.component";
 import { DashboardAdminComponent } from "./views/dashboard/dashboard-admin/dashboard-admin.component";
 import { Observable } from "rxjs";
-import { getToken } from "./utils/token";
+import { TokenService } from "./services/token.service";
 
 @Injectable()
 class isLoggedUser implements CanActivate {
-  constructor(private _router: Router) {}
+  constructor(private _router: Router, private _token: TokenService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -26,7 +26,7 @@ class isLoggedUser implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const token = getToken();
+    const token = this._token.getToken();
     if (!token || !token.isLogged || token.isAdmin)
       return this._router.navigate(["/login"]);
     return token.isLogged && !token.isAdmin;
@@ -35,7 +35,7 @@ class isLoggedUser implements CanActivate {
 
 @Injectable()
 class isLoggedAdmin implements CanActivate {
-  constructor(private _router: Router) {}
+  constructor(private _router: Router, private _token: TokenService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -45,7 +45,7 @@ class isLoggedAdmin implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    const token = getToken();
+    const token = this._token.getToken();
     if (!token || !token.isLogged) return this._router.navigate(["/login"]);
     return token.isLogged && token.isAdmin;
   }

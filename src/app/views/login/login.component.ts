@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 import { LoginService } from "./service/login.service";
 import { Route, Router } from "@angular/router";
-import { setToken, getToken } from "src/app/utils/token";
+import { TokenService } from "src/app/services/token.service";
 
 export interface User {
   login: string;
@@ -20,7 +20,11 @@ export interface UserLogged {
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  constructor(private _loginService: LoginService, private _router: Router) {}
+  constructor(
+    private _loginService: LoginService,
+    private _router: Router,
+    private _token: TokenService
+  ) {}
   user: User = {
     login: "",
     password: ""
@@ -28,7 +32,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   $auth: Subscription;
   showError: boolean;
   ngOnInit(): void {
-    const token = getToken();
+    const token = this._token.getToken();
     if (token?.isLogged) this.redirectUser(token);
   }
 
@@ -44,7 +48,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
         this.redirectUser(userLogged);
 
-        setToken(userLogged.isLogged, userLogged.isAdmin);
+        this._token.setToken(userLogged.isLogged, userLogged.isAdmin);
       });
   }
 
