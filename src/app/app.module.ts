@@ -5,7 +5,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
-import { LoginComponent } from "./login/login.component";
+import { LoginComponent } from "./views/login/login.component";
 import { InputFieldComponent } from "./components/input-field/input-field.component";
 import { ButtonComponent } from "./components/button/button.component";
 import { HttpClientModule } from "@angular/common/http";

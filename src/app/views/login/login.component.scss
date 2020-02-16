@@ -1,4 +1,4 @@
-@import "../../assets/scss/variables";
+@import "../../../assets/scss/variables";
 
 $height-box-login-mobile: 200px;
 $height-box-login-desktop: 400px;
@@ -46,7 +46,7 @@ $height-box-login-left-desktop: 400px;
   flex-direction: column;
 }
 .app-login-logo {
-  background: url("../../assets/images/logo-bip-code.png") no-repeat;
+  background: url("../../../assets/images/logo-bip-code.png") no-repeat;
   width: 140px;
   height: 151px;
   background-size: contain;
@@ -65,7 +65,7 @@ $height-box-login-left-desktop: 400px;
 }
 
 .footer-abstract {
-  background: url("../../assets/images/bg-login-footer.png") no-repeat;
+  background: url("../../../assets/images/bg-login-footer.png") no-repeat;
   position: absolute;
   bottom: 0px;
   left: 0px;

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
-import { LoginService } from "../services/login/login.service";
+import { LoginService } from "./service/login.service";
 
 export interface User {
   login: string;
