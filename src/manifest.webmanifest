@@ -1,8 +1,8 @@
 {
   "name": "bip-code",
-  "short_name": "bip-code",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "short_name": "Bip Code",
+  "theme_color": "#fa0042",
+  "background_color": "#2a2840",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
