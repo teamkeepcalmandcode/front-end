@@ -74,6 +74,13 @@ $height-box-login-left-desktop: 400px;
   background-size: cover;
 }
 
+.app-login-msg-error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  transition: all linear 0.4s;
+}
+
 @media screen and (min-width: 768px) {
   .app-login {
     background: #f1ecee;

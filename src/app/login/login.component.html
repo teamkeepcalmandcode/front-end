@@ -12,6 +12,8 @@
             [login]="true"
             placeholder="email"
             type="email"
+            [model]="user.login"
+            (changeModel)="user.login = $event"
           ></app-input-field>
         </div>
         <div class="input-login">
@@ -20,10 +22,20 @@
             [login]="true"
             placeholder="senha"
             type="password"
+            [model]="user.password"
+            (changeModel)="user.password = $event"
           ></app-input-field>
         </div>
+
+        <div class="app-login-msg-error" *ngIf="showError">
+          <span>Ops! Você informou email/senha inválidos.</span>
+        </div>
+
         <div class="form-button-login">
-          <app-button name="Entrar"></app-button>
+          <app-button
+            name="Entrar"
+            (clickButton)="postLogin(user)"
+          ></app-button>
         </div>
       </div>
     </div>

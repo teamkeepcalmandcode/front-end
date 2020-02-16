@@ -4,6 +4,8 @@
     [ngClass]="{ loginInput: login }"
     [placeholder]="placeholder"
     class="input-field form-control"
+    [(ngModel)]="model"
+    (ngModelChange)="changeModel.emit($event)"
   />
   <span class="input-focus"></span>
   <i class="fas {{ icon }} icon-input"></i>
