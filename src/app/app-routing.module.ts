@@ -1,11 +1,75 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule, Injectable } from "@angular/core";
+import {
+  Routes,
+  RouterModule,
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  UrlTree,
+  Router
+} from "@angular/router";
 import { LoginComponent } from "./views/login/login.component";
+import { DashboardUserComponent } from "./views/dashboard/dashboard-user/dashboard-user.component";
+import { DashboardAdminComponent } from "./views/dashboard/dashboard-admin/dashboard-admin.component";
+import { Observable } from "rxjs";
+import { getToken } from "./utils/token";
+
+@Injectable()
+class isLoggedUser implements CanActivate {
+  constructor(private _router: Router) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    const token = getToken();
+    if (!token || !token.isLogged || token.isAdmin)
+      return this._router.navigate(["/login"]);
+    return token.isLogged && !token.isAdmin;
+  }
+}
+
+@Injectable()
+class isLoggedAdmin implements CanActivate {
+  constructor(private _router: Router) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    const token = getToken();
+    if (!token || !token.isLogged) return this._router.navigate(["/login"]);
+    return token.isLogged && token.isAdmin;
+  }
+}
 
 const routes: Routes = [
   {
     path: "login",
     component: LoginComponent
+  },
+  {
+    path: "dashboard",
+    children: [
+      {
+        path: "",
+        component: DashboardUserComponent,
+        canActivate: [isLoggedUser]
+      },
+      {
+        path: "cliente",
+        component: DashboardAdminComponent,
+        canActivate: [isLoggedAdmin]
+      }
+    ]
   },
   {
     path: "",
@@ -16,6 +80,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [isLoggedUser, isLoggedAdmin]
 })
 export class AppRoutingModule {}

@@ -10,12 +10,16 @@ import { InputFieldComponent } from "./components/input-field/input-field.compon
 import { ButtonComponent } from "./components/button/button.component";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
+import { DashboardUserComponent } from "./views/dashboard/dashboard-user/dashboard-user.component";
+import { DashboardAdminComponent } from "./views/dashboard/dashboard-admin/dashboard-admin.component";
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     InputFieldComponent,
-    ButtonComponent
+    ButtonComponent,
+    DashboardUserComponent,
+    DashboardAdminComponent
   ],
   imports: [
     BrowserModule,

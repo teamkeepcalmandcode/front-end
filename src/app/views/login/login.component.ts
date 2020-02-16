@@ -1,13 +1,15 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 import { LoginService } from "./service/login.service";
+import { Route, Router } from "@angular/router";
+import { setToken, getToken } from "src/app/utils/token";
 
 export interface User {
   login: string;
   password: string;
 }
 
-export interface UserError {
+export interface UserLogged {
   isLogged: boolean;
   isAdmin: boolean;
 }
@@ -18,27 +20,44 @@ export interface UserError {
   styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  constructor(private loginService: LoginService) {}
+  constructor(private _loginService: LoginService, private _router: Router) {}
   user: User = {
     login: "",
     password: ""
   };
   $auth: Subscription;
   showError: boolean;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const token = getToken();
+    if (token?.isLogged) this.redirectUser(token);
+  }
 
   public postLogin(user: User) {
     this.showError = false;
-    this.$auth = this.loginService
+    this.$auth = this._loginService
       .postLogin(user)
-      .subscribe((userLogged: UserError) => {
+      .subscribe((userLogged: UserLogged) => {
         if (!userLogged.isLogged) {
           this.showError = true;
+          return;
         }
+
+        this.redirectUser(userLogged);
+
+        setToken(userLogged.isLogged, userLogged.isAdmin);
       });
   }
 
+  private redirectUser(userLogged: UserLogged) {
+    console.log(userLogged);
+    if (userLogged.isAdmin) {
+      this._router.navigate(["/dashboard/cliente"]);
+      return;
+    }
+    this._router.navigate(["/dashboard"]);
+  }
+
   ngOnDestroy() {
-    this.$auth.unsubscribe();
+    if (this.$auth) this.$auth.unsubscribe();
   }
 }
