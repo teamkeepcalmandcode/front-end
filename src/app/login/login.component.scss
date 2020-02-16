@@ -1,42 +1,39 @@
-@import '../../assets/scss/variables';
+@import "../../assets/scss/variables";
 
 $height-box-login-mobile: 200px;
 $height-box-login-desktop: 400px;
-$height-box-login-left-mobile: 150px;
+$height-box-login-left-mobile: 213px;
 $height-box-login-left-desktop: 400px;
 
-.background-abstract {
-  width: 100%;
-  background: url(../../assets/images/header-login-3.png) no-repeat;
-  height: 280px;
-  position: absolute;
-  background-size: contain;
-  top: -10px;
-}
 .app-login {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: $cor-principal;
 
-  background: url('../../assets/images/17751\ cópia.jpg') center center no-repeat;
-  background-size: cover;
+  background: $cor-secundaria;
 }
 .app-login-box {
   min-height: $height-box-login-mobile;
 }
 
 .app-login-panel-left {
+  margin-top: -40px;
+  margin-bottom: 30px;
   // background-color: $cor-principal;
   color: #2791d6;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   height: $height-box-login-left-mobile;
   display: flex;
-  justify-content: center;
+
   align-items: center;
+  flex-direction: column;
+  .app-login-seja-bem-vindo {
+    color: #fff;
+    font-weight: bold;
+    padding: 20px;
+  }
 }
 
 .app-login-panel-right {
@@ -48,16 +45,22 @@ $height-box-login-left-desktop: 400px;
   flex-direction: column;
 }
 .app-login-logo {
-  font-size: 30px;
-  font-weight: bold;
+  background: url("../../assets/images/logo-bip-code.png") no-repeat;
+  width: 140px;
+  height: 151px;
+  background-size: contain;
 }
 
 .input-login {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   ::ng-deep .form-control {
     background-color: transparent;
     color: #fff;
   }
+}
+
+.form-button-login {
+  margin-top: 20px;
 }
 
 @media screen and (min-width: 768px) {

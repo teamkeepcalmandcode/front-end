@@ -1,9 +1,10 @@
-@import '../../../assets/scss/variables';
+@import "../../../assets/scss/variables";
 
 .btn-cor-principal {
-  background-color: $cor-secundaria;
+  background-color: $cor-principal;
   color: #fff;
   cursor: pointer;
+  border-radius: 2px;
   &:hover {
     background-color: $cor-principal;
   }
