@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { Subject } from "rxjs";
 export interface UserToken {
   isLogged: boolean;
   isAdmin: boolean;
@@ -8,6 +9,8 @@ export interface UserToken {
   providedIn: "root"
 })
 export class TokenService {
+  public $removeToken: Subject<boolean> = new Subject();
+  public $addToken: Subject<boolean> = new Subject();
   constructor(private _router: Router) {}
 
   getToken = (): UserToken => {
@@ -19,10 +22,12 @@ export class TokenService {
       "token",
       JSON.stringify({ isLogged: isLogged, isAdmin: isAdmin })
     );
+    this.$addToken.next(true);
   };
 
   removeToken = () => {
     localStorage.removeItem("token");
     this._router.navigate(["/login"]);
+    this.$removeToken.next(true);
   };
 }

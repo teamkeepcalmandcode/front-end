@@ -15,5 +15,11 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const token = this._token.getToken();
     this.showHeader = token?.isLogged;
+    this._token.$addToken.subscribe(removed => {
+      this.showHeader = removed;
+    });
+    this._token.$removeToken.subscribe(removed => {
+      this.showHeader = !removed;
+    });
   }
 }
