@@ -1,1 +1,23 @@
-Id da Camapanha: {{ idCampanha }} ID do usuário: {{ idEscolhaUsuario }}
+<div class="feedback">
+  <div class="icone-white"></div>
+  <div
+    class="info-campanha"
+    [ngStyle]="{
+      opacity: showResult ? '1' : '0',
+      display: showRedirect ? 'none' : 'block'
+    }"
+  >
+    <h1>Oba! Mais um bip =)</h1>
+    <h2>{{ resultCampanha.campaign }}</h2>
+    <h3>
+      Então, você escolheu: <strong>{{ resultCampanha.choice }}</strong>
+    </h3>
+  </div>
+  <div
+    class="info-campanha-redirect"
+    [ngStyle]="{ opacity: showRedirect ? '1' : '0' }"
+  >
+    <h1>Já contabilizamos ;)</h1>
+    <h2>Vamos te redirecionar para o seu dashboard!</h2>
+  </div>
+</div>

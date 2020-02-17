@@ -29,10 +29,5 @@ export class AppComponent implements OnInit {
     this._ipInfo.getIpInfo().subscribe(info => {
       console.log(info);
     });
-
-    this._ipInfo.campanha().subscribe(info2 => {
-      const infos = info2;
-      console.log(infos);
-    });
   }
 }

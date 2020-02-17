@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
@@ -12,10 +12,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { DashboardUserComponent } from "./views/dashboard/dashboard-user/dashboard-user.component";
 import { DashboardAdminComponent } from "./views/dashboard/dashboard-admin/dashboard-admin.component";
-import { HeaderComponent } from './components/header/header.component';
-import { BoxProfileComponent } from './components/box-profile/box-profile.component';
-import { BoxCampanhaComponent } from './components/box-campanha/box-campanha.component';
-import { GerarBipComponent } from './views/gerar-bip/gerar-bip.component';
+import { HeaderComponent } from "./components/header/header.component";
+import { BoxProfileComponent } from "./components/box-profile/box-profile.component";
+import { BoxCampanhaComponent } from "./components/box-campanha/box-campanha.component";
+import { GerarBipComponent } from "./views/gerar-bip/gerar-bip.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +33,7 @@ import { GerarBipComponent } from './views/gerar-bip/gerar-bip.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     FormsModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production
