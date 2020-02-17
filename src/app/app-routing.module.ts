@@ -13,6 +13,7 @@ import { DashboardUserComponent } from "./views/dashboard/dashboard-user/dashboa
 import { DashboardAdminComponent } from "./views/dashboard/dashboard-admin/dashboard-admin.component";
 import { Observable } from "rxjs";
 import { TokenService } from "./services/token.service";
+import { GerarBipComponent } from "./views/gerar-bip/gerar-bip.component";
 
 @Injectable()
 class isLoggedUser implements CanActivate {
@@ -70,6 +71,12 @@ const routes: Routes = [
         canActivate: [isLoggedAdmin]
       }
     ]
+  },
+  // feedback/campaign/4/2
+
+  {
+    path: "feedback/campaign/:idCampanha/:idEscolhaUsuario",
+    component: GerarBipComponent
   },
   {
     path: "",

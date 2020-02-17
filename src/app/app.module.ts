@@ -15,6 +15,7 @@ import { DashboardAdminComponent } from "./views/dashboard/dashboard-admin/dashb
 import { HeaderComponent } from './components/header/header.component';
 import { BoxProfileComponent } from './components/box-profile/box-profile.component';
 import { BoxCampanhaComponent } from './components/box-campanha/box-campanha.component';
+import { GerarBipComponent } from './views/gerar-bip/gerar-bip.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { BoxCampanhaComponent } from './components/box-campanha/box-campanha.com
     DashboardAdminComponent,
     HeaderComponent,
     BoxProfileComponent,
-    BoxCampanhaComponent
+    BoxCampanhaComponent,
+    GerarBipComponent
   ],
   imports: [
     BrowserModule,
