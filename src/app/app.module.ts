@@ -12,6 +12,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { DashboardUserComponent } from "./views/dashboard/dashboard-user/dashboard-user.component";
 import { DashboardAdminComponent } from "./views/dashboard/dashboard-admin/dashboard-admin.component";
+import { HeaderComponent } from './components/header/header.component';
+import { BoxProfileComponent } from './components/box-profile/box-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import { DashboardAdminComponent } from "./views/dashboard/dashboard-admin/dashb
     InputFieldComponent,
     ButtonComponent,
     DashboardUserComponent,
-    DashboardAdminComponent
+    DashboardAdminComponent,
+    HeaderComponent,
+    BoxProfileComponent
   ],
   imports: [
     BrowserModule,
