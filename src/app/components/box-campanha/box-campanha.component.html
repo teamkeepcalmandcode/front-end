@@ -1,0 +1,19 @@
+<h3 class="titulo-campanha">{{ nomeCampanha }}</h3>
+<div class="box-campanha">
+  <header class="campanha-header">
+    <div
+      class="campanha-bg"
+      [ngStyle]="{ background: 'url(' + imagemCampanha + ') no-repeat' }"
+    ></div>
+    <div class="campanha-nome"></div>
+  </header>
+
+  <section class="campanha-info">
+    <div class="voce-ganhou">Você ganhou:</div>
+    <div class="campanha-info-qrcode">
+      <div class="campanha-info-quantidade">
+        {{ pontosGlobo }} <i class="fas fa-coins"></i>
+      </div>
+    </div>
+  </section>
+</div>

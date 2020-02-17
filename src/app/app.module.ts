@@ -14,6 +14,7 @@ import { DashboardUserComponent } from "./views/dashboard/dashboard-user/dashboa
 import { DashboardAdminComponent } from "./views/dashboard/dashboard-admin/dashboard-admin.component";
 import { HeaderComponent } from './components/header/header.component';
 import { BoxProfileComponent } from './components/box-profile/box-profile.component';
+import { BoxCampanhaComponent } from './components/box-campanha/box-campanha.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { BoxProfileComponent } from './components/box-profile/box-profile.compon
     DashboardUserComponent,
     DashboardAdminComponent,
     HeaderComponent,
-    BoxProfileComponent
+    BoxProfileComponent,
+    BoxCampanhaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,23 @@
-<div class="box-dashboard col-12">
-  <app-box-profile nome="Leandro Junior" nivel="Novato"></app-box-profile>
+<div class="box-dashboard">
+  <div class="col-12 col-md-4">
+    <app-box-profile nome="Leandro Junior" nivel="Novato"></app-box-profile>
+    <div class="box-campanha">
+      <h2>
+        Suas recompensas
+      </h2>
+      <app-box-campanha
+        nomeCampanha="Fanta Uva ou Fanta Guaraná?"
+        pontosGlobo="10"
+        cupomDesconto="true"
+        imagemCampanha="../../../assets/campanha/fanta.png"
+      ></app-box-campanha>
+
+      <app-box-campanha
+        nomeCampanha="Coca-Cola - Sinta o sabor"
+        pontosGlobo="10"
+        cupomDesconto="true"
+        imagemCampanha="../../../assets/campanha/coca-cola.png"
+      ></app-box-campanha>
+    </div>
+  </div>
 </div>
