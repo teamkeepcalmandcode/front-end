@@ -1,0 +1,16 @@
+@import "../../../assets/scss/variables";
+.box-profile {
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.06);
+  padding: 10px;
+  h1 {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+  }
+}
+
+.rtc-chart {
+  width: 100%;
+}

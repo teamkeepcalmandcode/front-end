@@ -29,6 +29,21 @@
           [dadosGrafico]="(relatorio?.graphics)[1]"
         ></app-grafico-hora>
       </div>
+      <div class="box-grafico">
+        <app-grafico-cidade-escolha
+          tituloGrafico="Bips por cidade - {{ (relatorio?.choices)[0].title }}"
+          [dadosGrafico]="(relatorio?.choices)[0]"
+          [number]="0"
+        ></app-grafico-cidade-escolha>
+      </div>
+
+      <div class="box-grafico">
+        <app-grafico-cidade-escolha
+          tituloGrafico="Bips por cidade - {{ (relatorio?.choices)[1].title }}"
+          [dadosGrafico]="(relatorio?.choices)[1]"
+          [number]="0"
+        ></app-grafico-cidade-escolha>
+      </div>
     </div>
   </div>
 </div>

@@ -23,6 +23,7 @@ import { GraficoCidadeComponent } from "./components/grafico-cidade/grafico-cida
 import { GoogleChartsModule } from "angular-google-charts";
 import { ChartsModule } from "ng2-charts";
 import { GraficoHoraComponent } from './components/grafico-hora/grafico-hora.component';
+import { GraficoCidadeEscolhaComponent } from './components/grafico-cidade-escolha/grafico-cidade-escolha.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { GraficoHoraComponent } from './components/grafico-hora/grafico-hora.com
     BoxCampanhaAdDetalhesComponent,
     RelatorioCampanhaComponent,
     GraficoCidadeComponent,
-    GraficoHoraComponent
+    GraficoHoraComponent,
+    GraficoCidadeEscolhaComponent
   ],
   imports: [
     BrowserModule,

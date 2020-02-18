@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: " https://limitless-atoll-61000.herokuapp.com/api"
+  api: "https://us-central1-bipcode-3016f.cloudfunctions.net/app/api"
 };
 
 /*
