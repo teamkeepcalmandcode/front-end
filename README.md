@@ -1,27 +1,37 @@
-# BipCode
+# Bem-Vindo a plataforma Bip Code
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
+Para ter a experiência de utilizar nossa plataforma segue as informações necessárias:
 
-## Development server
+### Passos para reproduzir a visão do telespectador interagindo com a plataforma:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+>Abra o vídeo simulando propagandas em uma TV 
+>URL: https://www.youtube.com/watch?v=BR8uoFtn_qU
+- **OU** utilize a imagem abaixo como simulação de uma propaganda
 
-## Code scaffolding
+![DASHBOARD](img/coca.jpeg)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Basta apenas apontar a câmera ou um leitor de QRCode de um smartphone e escolher o produto que você preferiu. Após isso você será redirecionado para plataforma e sua escolha será registrada.
 
-## Build
+![DASHBOARD](img/dashboard-user.jpeg)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Passos para reproduzir a visão de um anunciante interagindo com a plataforma:
 
-## Running unit tests
+>Acessar: https://bip-code.netlify.com
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Realizar o login com as seguintes informações:
+| Login	| Password |
+|--|--|
+| coca | coca |
+| pizza | pizza |
 
-## Running end-to-end tests
+Será exibido o Dashboard do anuciante com suas campanhas
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![DASHBOARD](img/dashboard-admin.jpeg)
 
-## Further help
+#### Escolhendo uma campanha será exibido o relatório com as seguintes informações:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Bip por Cidade
+- Bip por Horas
+
+![DASHBOARD](img/graphics-01.jpeg)
+![DASHBOARD](img/graphics-02.jpeg)
