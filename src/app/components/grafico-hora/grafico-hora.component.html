@@ -1,0 +1,15 @@
+<div class="box-profile">
+  <h1>
+    Bips por hora
+  </h1>
+  <div>
+    <google-chart
+      class="rtc-chart"
+      #chart
+      [type]="'AreaChart'"
+      [data]="dadosGrafico.values"
+      [options]="options"
+    >
+    </google-chart>
+  </div>
+</div>

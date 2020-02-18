@@ -4,6 +4,7 @@ import { Subject } from "rxjs";
 export interface UserToken {
   isLogged: boolean;
   isAdmin: boolean;
+  idPartner?: number;
 }
 @Injectable({
   providedIn: "root"
@@ -17,10 +18,14 @@ export class TokenService {
     return JSON.parse(localStorage.getItem("token"));
   };
 
-  setToken = (isLogged, isAdmin) => {
+  setToken = (isLogged, isAdmin, idPartner = null) => {
     localStorage.setItem(
       "token",
-      JSON.stringify({ isLogged: isLogged, isAdmin: isAdmin })
+      JSON.stringify({
+        isLogged: isLogged,
+        isAdmin: isAdmin,
+        idPartner: idPartner
+      })
     );
     this.$addToken.next(true);
   };

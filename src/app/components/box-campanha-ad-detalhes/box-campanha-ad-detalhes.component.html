@@ -1,0 +1,18 @@
+<h3 class="titulo-campanha">{{ nomeCampanha }}</h3>
+<div class="box-campanha" (click)="gerarRelatorio(id)">
+  <header class="campanha-header">
+    <div
+      class="campanha-bg"
+      [ngStyle]="{ background: 'url(' + imagemCampanha + ') no-repeat' }"
+    ></div>
+    <div class="campanha-nome"></div>
+  </header>
+
+  <section class="campanha-info">
+    <div class="voce-ganhou">
+      <span class="link-relatorio"
+        >Relatório da campanha <i class="fas fa-chart-pie"></i
+      ></span>
+    </div>
+  </section>
+</div>

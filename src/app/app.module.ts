@@ -16,6 +16,13 @@ import { HeaderComponent } from "./components/header/header.component";
 import { BoxProfileComponent } from "./components/box-profile/box-profile.component";
 import { BoxCampanhaComponent } from "./components/box-campanha/box-campanha.component";
 import { GerarBipComponent } from "./views/gerar-bip/gerar-bip.component";
+import { BoxCampanhaAdComponent } from "./components/box-campanha-ad/box-campanha-ad.component";
+import { BoxCampanhaAdDetalhesComponent } from "./components/box-campanha-ad-detalhes/box-campanha-ad-detalhes.component";
+import { RelatorioCampanhaComponent } from "./views/relatorio-campanha/relatorio-campanha.component";
+import { GraficoCidadeComponent } from "./components/grafico-cidade/grafico-cidade.component";
+import { GoogleChartsModule } from "angular-google-charts";
+import { ChartsModule } from "ng2-charts";
+import { GraficoHoraComponent } from './components/grafico-hora/grafico-hora.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,13 +34,20 @@ import { GerarBipComponent } from "./views/gerar-bip/gerar-bip.component";
     HeaderComponent,
     BoxProfileComponent,
     BoxCampanhaComponent,
-    GerarBipComponent
+    GerarBipComponent,
+    BoxCampanhaAdComponent,
+    BoxCampanhaAdDetalhesComponent,
+    RelatorioCampanhaComponent,
+    GraficoCidadeComponent,
+    GraficoHoraComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    GoogleChartsModule,
+    ChartsModule,
     FormsModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production

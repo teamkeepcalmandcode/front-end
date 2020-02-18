@@ -63,10 +63,10 @@ export class GerarBipComponent implements OnInit {
       setTimeout(() => {
         this.showResult = false;
         this.showRedirect = true;
+        setTimeout(() => {
+          this._router.navigate(["/login"]);
+        }, 4000);
       }, 6000);
-      setTimeout(() => {
-        this._router.navigate(["/login"]);
-      }, 10000);
     });
   }
 }

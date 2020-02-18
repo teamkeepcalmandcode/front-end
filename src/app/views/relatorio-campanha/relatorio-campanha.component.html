@@ -1,7 +1,7 @@
 <div class="box-dashboard">
   <div class="col-12 col-md-4">
     <app-box-campanha-ad
-      [bipsConquistados]="20"
+      [bipsConquistados]="relatorio?.total"
       [nome]="nome?.title"
       [imgProfile]="
         token.idPartner === 1
@@ -14,22 +14,21 @@
           : '../../../assets/campanha/pizzahut.jpg'
       "
     ></app-box-campanha-ad>
+
     <div class="box-campanha">
       <h2>
-        Campanhas Geradas
+        {{ relatorio?.campaign }}
       </h2>
-
-      <app-box-campanha-ad-detalhes
-        *ngFor="let cliente of infoCampanha"
-        [id]="cliente.id"
-        [nomeCampanha]="cliente.title"
-        [imagemCampanha]="
-          token.idPartner === 1
-            ? '../../../assets/campanha/fanta.png'
-            : '../../../assets/campanha/pizza.jpg'
-        "
-        [mostrarPontosGlobo]="false"
-      ></app-box-campanha-ad-detalhes>
+      <div class="box-grafico">
+        <app-grafico-cidade
+          [dadosGrafico]="(relatorio?.graphics)[0]"
+        ></app-grafico-cidade>
+      </div>
+      <div class="box-grafico">
+        <app-grafico-hora
+          [dadosGrafico]="(relatorio?.graphics)[1]"
+        ></app-grafico-hora>
+      </div>
     </div>
   </div>
 </div>

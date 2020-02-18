@@ -1,0 +1,63 @@
+@import "../../../assets/scss/variables";
+
+.titulo-campanha {
+  font-size: 18px;
+}
+.box-campanha {
+  border-radius: 12px;
+  background-color: #2a2840;
+  box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.06);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  color: #fff;
+
+  padding-bottom: 10px;
+  .campanha-header {
+    padding-bottom: 10px;
+    width: 100%;
+    position: relative;
+    .campanha-bg {
+      width: 100%;
+      height: 120px;
+
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      background-size: cover !important;
+      background-position: center center !important;
+    }
+    .campanha-nome {
+      text-align: center;
+      color: #555;
+      font-size: 14px;
+      strong {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .campanha-info {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    .voce-ganhou {
+      margin-right: 10px;
+    }
+    .campanha-info-nome {
+      font-size: 14px;
+    }
+
+    .campanha-info-quantidade {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .campanha-desconto {
+      button {
+        background-color: $cor-principal;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 2px;
+      }
+    }
+  }
+}

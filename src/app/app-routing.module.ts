@@ -14,6 +14,7 @@ import { DashboardAdminComponent } from "./views/dashboard/dashboard-admin/dashb
 import { Observable } from "rxjs";
 import { TokenService } from "./services/token.service";
 import { GerarBipComponent } from "./views/gerar-bip/gerar-bip.component";
+import { RelatorioCampanhaComponent } from "./views/relatorio-campanha/relatorio-campanha.component";
 
 @Injectable()
 class isLoggedUser implements CanActivate {
@@ -72,8 +73,11 @@ const routes: Routes = [
       }
     ]
   },
-  // feedback/campaign/4/2
-
+  {
+    path: "relatorio-campanha/:id",
+    canActivate: [isLoggedAdmin],
+    component: RelatorioCampanhaComponent
+  },
   {
     path: "feedback/campaign/:idCampanha/:idEscolhaUsuario",
     component: GerarBipComponent

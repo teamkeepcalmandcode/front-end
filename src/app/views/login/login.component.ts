@@ -12,6 +12,7 @@ export interface User {
 export interface UserLogged {
   isLogged: boolean;
   isAdmin: boolean;
+  idPartner?: number;
 }
 
 @Component({
@@ -47,7 +48,14 @@ export class LoginComponent implements OnInit, OnDestroy {
         }
 
         this.redirectUser(userLogged);
-
+        if (userLogged?.idPartner) {
+          this._token.setToken(
+            userLogged.isLogged,
+            userLogged.isAdmin,
+            userLogged.idPartner
+          );
+          return;
+        }
         this._token.setToken(userLogged.isLogged, userLogged.isAdmin);
       });
   }

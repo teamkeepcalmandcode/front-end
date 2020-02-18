@@ -1,0 +1,43 @@
+<div class="box-profile">
+  <header class="profile-header">
+    <div
+      class="profile-bg"
+      [ngStyle]="{ background: 'url(' + bgCliente + ') no-repeat' }"
+    ></div>
+    <div class="profile-avatar">
+      <img src="{{ imgProfile }}" />
+      <div class="profile-nivel"></div>
+    </div>
+    <div class="profile-nome">
+      <strong>{{ nome }}</strong> <br />
+      {{ nivel }}
+    </div>
+  </header>
+
+  <section class="profile-info">
+    <div class="row">
+      <div class="profile-info-qrcode col-6">
+        <div class="profile-info-icon">
+          <i class="fas fa-qrcode"></i>
+        </div>
+        <div class="profile-info-quantidade">
+          {{ bipsConquistados }}
+        </div>
+        <div class="profile-info-nome">
+          Bips Conquistados
+        </div>
+      </div>
+      <div class="profile-info-qrcode col-6">
+        <div class="profile-info-icon">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <div class="profile-info-quantidade">
+          1
+        </div>
+        <div class="profile-info-nome">
+          Campanha
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

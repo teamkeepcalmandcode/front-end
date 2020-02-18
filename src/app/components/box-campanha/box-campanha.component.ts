@@ -14,6 +14,8 @@ export class BoxCampanhaComponent implements OnInit {
   cupomDesconto: boolean;
   @Input()
   imagemCampanha: string;
+  @Input()
+  mostrarPontosGlobo = true;
   constructor() {}
 
   ngOnInit(): void {}
