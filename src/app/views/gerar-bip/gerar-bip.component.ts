@@ -31,7 +31,7 @@ export class GerarBipComponent implements OnInit {
     public _route: ActivatedRoute,
     private _router: Router,
     public _campanha: CampanhaService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const token = this._token.getToken();
@@ -65,8 +65,8 @@ export class GerarBipComponent implements OnInit {
         this.showRedirect = true;
         setTimeout(() => {
           this._router.navigate(["/login"]);
-        }, 4000);
-      }, 6000);
+        }, 2000);
+      }, 2000);
     });
   }
 }
